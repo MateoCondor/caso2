@@ -19,7 +19,7 @@ class WeatherModel extends WeatherEntity {
       weatherMain: json['weather'][0]['main'] as String,
       weatherIcon: json['weather'][0]['icon'] as String,
       // Convertir temperatura de Kelvin a Celsius
-      temperature: (json['main']['temp'] as num).toDouble() - 273.15,
+      temperature: (json['main']['temp'] as num).toDouble() ?? 0.0,
       humidity: json['main']['humidity'] as int,
     );
   }
