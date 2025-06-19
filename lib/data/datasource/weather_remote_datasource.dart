@@ -7,7 +7,8 @@ class WeatherRemoteDataSource {
   final http.Client _client;
   
   static const String _apiKey = 'ee14acdba16ea4479272a798437d0722';
-  static const String _baseUrl = 'http://api.openweathermap.org/data/2.5';
+  // Cambiar HTTP por HTTPS
+  static const String _baseUrl = 'https://api.openweathermap.org/data/2.5';
 
   WeatherRemoteDataSource(this._client);
 
@@ -40,7 +41,7 @@ class WeatherRemoteDataSource {
       if (e is Exception) {
         rethrow;
       } else {
-        throw Exception('Error de conexión: $e');
+        throw Exception('Error de conexión: Verifica tu conexión a Internet');
       }
     }
   }
